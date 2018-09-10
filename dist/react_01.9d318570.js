@@ -20940,6 +20940,7 @@ if ('development' === 'production') {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.Hello = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -20955,7 +20956,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Hello = function (_Component) {
+var Hello = exports.Hello = function (_Component) {
   _inherits(Hello, _Component);
 
   function Hello() {
@@ -20977,8 +20978,6 @@ var Hello = function (_Component) {
 
   return Hello;
 }(_react.Component);
-
-exports.default = Hello;
 },{"react":"node_modules/react/index.js"}],"src/arithmeticModule.js":[function(require,module,exports) {
 "use strict";
 
@@ -21021,7 +21020,229 @@ var Arithmetic = function () {
 }();
 
 exports.default = Arithmetic;
-},{}],"index.js":[function(require,module,exports) {
+},{}],"src/Calc.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _arithmeticModule = require('./arithmeticModule');
+
+var _arithmeticModule2 = _interopRequireDefault(_arithmeticModule);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Calc = function (_Component) {
+  _inherits(Calc, _Component);
+
+  function Calc() {
+    _classCallCheck(this, Calc);
+
+    return _possibleConstructorReturn(this, (Calc.__proto__ || Object.getPrototypeOf(Calc)).apply(this, arguments));
+  }
+
+  _createClass(Calc, [{
+    key: 'render',
+    value: function render() {
+      var a = new _arithmeticModule2.default();
+      return _react2.default.createElement(
+        'ul',
+        null,
+        _react2.default.createElement(
+          'li',
+          { style: { fontWeight: '700' } },
+          '14 + 2 = ',
+          a.sum(14, 2)
+        ),
+        _react2.default.createElement(
+          'li',
+          { style: { color: 'purple' } },
+          '14 * 2 = ',
+          a.multiply(14, 2)
+        )
+      );
+    }
+  }]);
+
+  return Calc;
+}(_react.Component);
+
+exports.default = Calc;
+},{"react":"node_modules/react/index.js","./arithmeticModule":"src/arithmeticModule.js"}],"src/Receipt.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Receipt = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OrderItem = function (_Component) {
+  _inherits(OrderItem, _Component);
+
+  function OrderItem(name, price, quantity) {
+    _classCallCheck(this, OrderItem);
+
+    var _this = _possibleConstructorReturn(this, (OrderItem.__proto__ || Object.getPrototypeOf(OrderItem)).call(this));
+
+    _this.name = name, _this.price = price;
+    _this.quantity = quantity;
+    return _this;
+  }
+
+  return OrderItem;
+}(_react.Component);
+
+var Receipt = exports.Receipt = function (_Component2) {
+  _inherits(Receipt, _Component2);
+
+  function Receipt(orderItems, totalPrice) {
+    _classCallCheck(this, Receipt);
+
+    var _this2 = _possibleConstructorReturn(this, (Receipt.__proto__ || Object.getPrototypeOf(Receipt)).call(this));
+
+    _this2.orderItems = [];
+    _this2.totalPrice = 0;
+    return _this2;
+  }
+
+  _createClass(Receipt, [{
+    key: "addOrderItem",
+    value: function addOrderItem(orderItem) {
+      this.orderItems.push(orderItem);
+      this.totalPrice += orderItem.price * orderItem.quantity;
+    }
+  }, {
+    key: "removeOrderItem",
+    value: function removeOrderItem(name) {
+      var removedOi = this.orderItems.find(function (oi) {
+        return oi.name == name;
+      });
+      this.orderItems = this.orderItems.filter(function (oi) {
+        return oi !== removedOi;
+      });
+      this.totalPrice -= removedOi.price * removedOi.quantity;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var orderItem1 = new OrderItem("Bottle of water", 2, 10);
+      var orderItem2 = new OrderItem("Machete", 150, 2);
+      var orderItem3 = new OrderItem("Antiseptics", 15, 5);
+      var orderItem4 = new OrderItem("Baloon", 5000, 1);
+
+      var orderItems = [orderItem1, orderItem2, orderItem3, orderItem4];
+
+      var r = new Receipt();
+
+      orderItems.forEach(function (oi) {
+        return r.addOrderItem(oi);
+      });
+
+      // r.removeOrderItem("Baloon")
+
+      var orderList = r.orderItems.map(function (oi) {
+        return _react2.default.createElement(
+          "tr",
+          null,
+          _react2.default.createElement(
+            "td",
+            null,
+            oi.name
+          ),
+          _react2.default.createElement(
+            "td",
+            null,
+            oi.price
+          ),
+          _react2.default.createElement(
+            "td",
+            null,
+            oi.quantity
+          ),
+          _react2.default.createElement(
+            "td",
+            null,
+            oi.price * oi.quantity
+          )
+        );
+      });
+
+      return _react2.default.createElement(
+        "table",
+        null,
+        _react2.default.createElement(
+          "tbody",
+          null,
+          _react2.default.createElement(
+            "tr",
+            null,
+            _react2.default.createElement(
+              "td",
+              null,
+              "Product"
+            ),
+            _react2.default.createElement(
+              "td",
+              null,
+              "Price"
+            ),
+            _react2.default.createElement(
+              "td",
+              null,
+              "Quantity"
+            ),
+            _react2.default.createElement(
+              "td",
+              null,
+              "Subtotal"
+            )
+          ),
+          orderList,
+          _react2.default.createElement(
+            "tr",
+            null,
+            _react2.default.createElement(
+              "td",
+              { id: "total-price", colSpan: 4 },
+              "Total: ",
+              r.totalPrice
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Receipt;
+}(_react.Component);
+},{"react":"node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
 'use strict';
 
 var _react = require('react');
@@ -21034,22 +21255,20 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _Hello = require('./src/Hello');
 
-var _Hello2 = _interopRequireDefault(_Hello);
+var _Calc = require('./src/Calc');
 
-var _arithmeticModule = require('./src/arithmeticModule');
+var _Calc2 = _interopRequireDefault(_Calc);
 
-var _arithmeticModule2 = _interopRequireDefault(_arithmeticModule);
+var _Receipt = require('./src/Receipt');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var a = new _arithmeticModule2.default();
-console.log(a.sum(12, 21));
-console.log(a.subtract(33, 21));
-console.log(a.multiply(11, 11));
-console.log(a.divide(12, 2.4));
+_reactDom2.default.render(_react2.default.createElement(_Hello.Hello, null), document.getElementById('hello'));
 
-_reactDom2.default.render(_react2.default.createElement(_Hello2.default, null), document.getElementById('root'));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./src/Hello":"src/Hello.js","./src/arithmeticModule":"src/arithmeticModule.js"}],"../../../.nvm/versions/node/v10.10.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+_reactDom2.default.render(_react2.default.createElement(_Calc2.default, null), document.getElementById('calc'));
+
+_reactDom2.default.render(_react2.default.createElement(_Receipt.Receipt, null), document.getElementById('receipt'));
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./src/Hello":"src/Hello.js","./src/Calc":"src/Calc.js","./src/Receipt":"src/Receipt.js"}],"../../../.nvm/versions/node/v10.10.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -21078,7 +21297,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '58710' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50659' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
