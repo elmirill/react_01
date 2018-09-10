@@ -103,9 +103,64 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"index.js":[function(require,module,exports) {
+})({"src/arithmeticModule.js":[function(require,module,exports) {
+"use strict";
 
-},{}],"../../../.nvm/versions/node/v10.10.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Arithmetic = function () {
+  function Arithmetic() {
+    _classCallCheck(this, Arithmetic);
+  }
+
+  _createClass(Arithmetic, [{
+    key: "sum",
+    value: function sum(a, b) {
+      return a + b;
+    }
+  }, {
+    key: "subtract",
+    value: function subtract(a, b) {
+      return a - b;
+    }
+  }, {
+    key: "multiply",
+    value: function multiply(a, b) {
+      return a * b;
+    }
+  }, {
+    key: "divide",
+    value: function divide(a, b) {
+      return a / b;
+    }
+  }]);
+
+  return Arithmetic;
+}();
+
+exports.default = Arithmetic;
+},{}],"index.js":[function(require,module,exports) {
+'use strict';
+
+var _arithmeticModule = require('./src/arithmeticModule');
+
+var _arithmeticModule2 = _interopRequireDefault(_arithmeticModule);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var a = new _arithmeticModule2.default();
+
+console.log(a.sum(12, 21));
+console.log(a.subtract(33, 21));
+console.log(a.multiply(11, 11));
+console.log(a.divide(12, 2.4));
+},{"./src/arithmeticModule":"src/arithmeticModule.js"}],"../../../.nvm/versions/node/v10.10.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -276,3 +331,4 @@ function hmrAccept(bundle, id) {
   });
 }
 },{}]},{},["../../../.nvm/versions/node/v10.10.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+//# sourceMappingURL=/react_01.9d318570.map
